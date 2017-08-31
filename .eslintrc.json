@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": 0,
+    "no-var": 2,
+    "eqeqeq": ["warn", "smart"],
+    "semi": [2, "always"],
+    "no-debugger": 2,
+    "import/no-named-as-default": 0
+  }
+}
