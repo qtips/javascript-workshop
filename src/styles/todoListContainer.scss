@@ -1,0 +1,54 @@
+.lists-container{
+  display: flex;
+  flex-direction:column;
+  height:100%;
+
+  .new-list{
+    flex:0 1 auto;
+    padding:10px 0;
+    display:block;
+    border:0;
+    border-bottom:1px solid #bbb;
+    cursor:pointer;
+    color:#333;
+  }
+
+  .lists{
+    flex:1 1 auto;
+    list-style:none;
+    margin:0;
+    padding:0;
+    > li{
+      > button{
+        display:flex;
+        align-items:center;
+        border:0;
+        border-bottom:1px solid #bbb;
+        padding:10px 0;
+        width:100%;
+        cursor: pointer;
+        &:after{
+          content:'chevron_right';
+          display: block;
+          flex:0 1 auto;
+          margin-left:auto;
+          opacity:0;
+          transform:translateX(-1rem);
+          transition:0.2s ease-out all;
+        }
+        > span{
+          padding:0 10px;
+        }
+      }
+      &.open{
+        > button{
+          background-color:rgba(0,0,0,0.2);
+          &:after{
+            opacity:1;
+            transform:translateX(0em);
+          }
+        }
+      }
+    }
+  }
+}

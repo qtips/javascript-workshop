@@ -9,8 +9,8 @@ module.exports = {
     },
     devServer: {
         contentBase: path.join(__dirname, 'www'), //statiske filer lokasjon
-        port:1234,
-        quiet:true // debug?
+        port:1234
+        //quiet:false // debug?
     },
     module: {
         rules: [

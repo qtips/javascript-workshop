@@ -1,0 +1,31 @@
+.todo{
+  display:flex;
+  align-items:center;
+
+  input, button{
+    display: block;
+    flex:1 1 auto;
+  }
+  input[type=checkbox]{
+    flex:0 1 auto;
+  }
+  input[type=text]{
+    border:none;
+    display:block;
+    height:100%;
+    width:auto;
+  }
+  button{
+    flex:0 1 auto;
+    border:0;
+  }
+
+  &.done{
+    background-color:#efefef;
+    input[type=text]{
+      text-decoration:line-through;
+      font-style:italic;
+      color:#999;
+    }
+  }
+}

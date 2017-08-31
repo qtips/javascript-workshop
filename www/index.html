@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /*hack for å unngå at ting er synlig før alt er loaded*/
+        body {
+            opacity: 0
+        }
+    </style>
+</head>
+<body class="loggedin" data-bind="css: {'ready': true, }">      <!-- må ha loggedin class for å aktivere list-manager-->
+    <div class="list-manager">
+        <div class="lists-container">
+            <button class="new-list" data-bind="click: newList">
+                <i class="material-icons">add_circle</i>   <!-- ikonet kommer fra link href Meterial Icons -->
+            </button>
+
+            <ul class="lists" data-bind="foreach: lists"> <!-- knockout foreach - for hver item i App.lists -->
+                <li data-bind="css: {'open': $parent.openList() === $data}"> <!-- $data er todolist instansen der og da-->
+                    <button class="material-icons--after" data-bind="click: $parent.evts.onListClick"> <!-- knockout sender list item inn i funksjonen-->
+                        <span data-bind="text: title"></span> <!-- knockout text - TodoList.title -->
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="list-container" data-bind="with: openList">   <!-- with gjør at man slipper å kalle openList() under for å få tak i current element -->
+            <!-- Now we are in the context of a single TodoList instance -->
+            <input type="text" placeholder="Title" data-bind="textInput: title" />                                                    <!-- texInput er knockout spesifikk for å oppdatere umiddelbart -->
+            <ul class="todos">
+                <!-- ko foreach: todos --> <!-- dette er knockout syntax for å lage en forløkke - kunne brukt div med foreach -->
+                <li class="todo" data-bind="css: {'done': done}">
+                    <input type="checkbox" data-bind="checked: done"/>
+                    <input type="text" data-bind="textInput: text"/>
+                    <button class="remove">
+                        <i class="material-icons">remove_circle_outline</i>
+                    </button>
+                </li>
+                <!-- /ko -->
+                <li class="todo new-todo" data-bind="with: newTodo">
+                    <input type="text" placeholder="New todo item" data-bind="event: {keydown: $parent.evts.onNewTodoTextKeyDown},
+            textInput: text"/>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <script src="bundle.js"></script>
+</body>
+</html>
