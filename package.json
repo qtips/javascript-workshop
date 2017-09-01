@@ -6,11 +6,12 @@
   "keywords": [],
   "author": "Qadeer Khan",
   "scripts": {
-    "eslint:watch": "esw --color -w ./**/*.js",
-    "eslint": "eslint --color ./**/*.js",
+    "eslint:watch": "esw --color -w ./*.js",
+    "eslint": "eslint --color *.js",
     "start:quietdev": "webpack-dev-server --quiet",
     "start:dev": "webpack-dev-server",
-    "start": "concurrently --kill-others \"npm run eslint:watch\" \"npm run start:quietdev\""
+    "start:api": "node api/api.js",
+    "start": "concurrently --kill-others \"npm run eslint:watch\" \"npm run start:quietdev\" \"npm run start:api\""
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -28,6 +29,12 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "knockout": "^3.4.2"
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "helmet": "^3.8.1",
+    "knockout": "^3.4.2",
+    "sha512": "0.0.1"
   }
 }

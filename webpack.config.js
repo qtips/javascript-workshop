@@ -2,7 +2,10 @@ const path = require('path');
 
 module.exports = {
     devtool: 'source-map',
-    entry: './src/App.js',
+    entry: [
+        'babel-polyfill', // bundle.js vil inneholde polyfill koden for transformasjon og vår App.js
+        './src/App.js'
+    ],
     output: {                    // webpack lager bundle og putter det her
         filename: 'bundle.js',
         publicPath: '/'

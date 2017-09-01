@@ -1,11 +1,18 @@
 * `npm init` starter et nytt node prosjekt med package json
 * webpack - pakker javascript applikasjoner
-* webpack-hot-reloading - react redux (for hot reloading)
+* webpack-hot-reloading - kan også bruke react redux for bedre hot reloading
 * loadere - loadere brukes av webpack laster css filer, f.eks. css-loader
 * generatorer fra angular og react setter opp package.json
 * eslint - syntax sjekking og kodestandard, type sonar.
 * babel - transpiling? og loader
-* polyfill? emularer kode for bakoverkompatiblitet til gamle browsere
+* babel-polyfill? emularer kode for bakoverkompatiblitet til gamle browsere - vi må ha med for å støtte async og await
+* knockout for binding
+
+node - serverside
+* express -> node server
+* helmet - express plugin for å skjule headere fra server
+* nsp - sjekker node dependecies for å sikkerhetssvakheter
+* body-parser - parse basert på response type
 
 package.json:
 * ^ Vil ha siste minor versjon av node-ass
