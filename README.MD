@@ -79,7 +79,7 @@ Nedenfor følger notater fra workshop:
 * "env": ikke klag på diverste miljøene/rammeverk vi kjører på
 * kan ha flere eslint filer for å få feil hvis man skrive node kode et sted det ikke skal være med
 * tall betydning: 0  ignorer, 2 gi feil,  1 gi warning
-* putter det som script eslint i package.json for å kjøre det gjennom npm
+* putter eslint som script eslint i package.json for å kjøre det gjennom npm
 * esw - eslint-watch - linter mens man kjører
 
 **html:**
