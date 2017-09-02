@@ -22,7 +22,7 @@ const fetchJson = async (url, body) => { // eksponeres ikke siden den er utenfor
     // i tillegg er flyten enklere å følge med på
 
     //return fetch(url, request).then(res => res.json()); -> hvis uten async keyword
-    return jsonResponse
+    return jsonResponse;
 };
 
 export class StorageService {
@@ -31,7 +31,7 @@ export class StorageService {
     }
 
     getEndpoint(op) {
-       return this.endpoint+"/"+op
+       return this.endpoint+"/"+op;
     }
 
     async get(identifier) {

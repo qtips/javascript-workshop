@@ -1,8 +1,8 @@
 import {applyBindings, observable, observableArray, computed} from 'knockout'; //webpack/babel sørger for å hente dependecy fra riktig sted fra node_modules - i tillegg er det js filer
 
 import TodoList from './components/TodoList';
-import StorageService from './services/StorageService'
-import LoginBox from './components/LoginBox'
+import StorageService from './services/StorageService';
+import LoginBox from './components/LoginBox';
 
 import './App.scss';
 /**
@@ -13,7 +13,7 @@ class App {
 //class er syntactic sugar for const App = function() {}
     constructor({storageService, loginBox} = {}) {
         this.storageService = storageService;
-        this.loginBox = loginBox
+        this.loginBox = loginBox;
         this.lists = observableArray(); // skal holde TodoList[]
         this.openList = observable();
 

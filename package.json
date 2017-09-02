@@ -6,8 +6,8 @@
   "keywords": [],
   "author": "Qadeer Khan",
   "scripts": {
-    "eslint:watch": "esw --color -w ./*.js",
-    "eslint": "eslint --color *.js",
+    "eslint:watch": "esw --color -w .",
+    "eslint": "eslint --color .",
     "start:quietdev": "webpack-dev-server --quiet",
     "start:dev": "webpack-dev-server",
     "start:api": "node api/api.js",

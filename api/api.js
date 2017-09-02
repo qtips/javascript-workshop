@@ -33,7 +33,7 @@ app.get('/ping', (req, res) => {
 app.get('/lists', (req, res) => {
     const keys = Object.keys(store);
     if (keys.length === 0) {
-        res.sendStatus(404)
+        res.sendStatus(404);
     } else {
         res.json(keys);
     }
@@ -56,12 +56,12 @@ app.post('/lists/:identifier', (req, res) => { //plukk ut identifier
     console.log('store lists', hashedId, req.body); // debuggere funker ikke veldig bra med node så vi bruker console.log
     store[hashedId] = req.body; //  ferdig parset av bodyParser
     res.json({ok: true});
-    console.log('store content', store)
+    console.log('store content', store);
 });
 
 app.delete('/lists/:identifier', (req, res) => {
     const hashedId = hash(req.params.identifier);
-    const lists = store[hashedId]
+    const lists = store[hashedId];
     if (!lists) {
         res.sendStatus(404);
     } else {

@@ -1,4 +1,4 @@
-import {observable} from 'knockout'
+import {observable} from 'knockout';
 
 export class Todo {
     constructor({text = '', done = false} = {}) {
@@ -8,18 +8,18 @@ export class Todo {
             onClickRow: (model, evt) => {
                 if (evt.altKey) this.onTodoClick();
             }
-        }
+        };
     }
 
     onTodoClick() {     // denne metoden jobber bare på instansen.
-        this.done(!this.done())
+        this.done(!this.done());
     }
 
     getData() {
         return {
             text: this.text(),
             done: this.done()
-        }
+        };
     }
 }
 
