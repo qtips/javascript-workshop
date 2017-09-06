@@ -8,6 +8,8 @@ export class TodoList { //export class er som public class
         this.newTodo = observable(new Todo());
 
         this.evts = {
+            // Definerer disse metodene for å sette this med lamda. 
+            // Hvis vi kaller onNewTodTextKeyDown() på klassen direkte så vil ikke this være instanen, men bli bestemt av kaller konteksten. 
             onNewTodoTextKeyDown: (model, evt) => this.onNewTodoTextKeyDown(model, evt), // må sende med evt fordi vi må sjekke hvilke tast som ble trykket
             onClickRemove: (model) => this.removeTodo(model) // må sende med evt fordi vi må sjekke hvilke tast som ble trykket
         };
